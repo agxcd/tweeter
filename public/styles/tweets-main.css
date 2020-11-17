@@ -14,12 +14,15 @@ hr {
 
 /* Hover effect */
 article:hover {
-  padding: 10px;
   box-shadow: 5px 10px #c5cbe3;
 }
-
 .hidden {
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
+}
+
+article:hover .hidden {
+  display: block;
 }
 
 .user-id {
