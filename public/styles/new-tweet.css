@@ -1,0 +1,34 @@
+/* Tweet Compost */
+/* #new-tweet {
+  visibility: hidden;
+} */
+
+textarea {
+  width: 90vw;
+  background-color: #f4f1ec;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom: 3px solid #545149;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+  padding: 0.5rem;
+}
+.tweet-info {
+  font-family: "Bungee";
+  padding-bottom: 0.5rem;
+}
+
+.t-btn {
+  background-color: #4056a1;
+  height: 1.5em;
+  color: #ffffff;
+}
+
+#tweet-text {
+  color: #545149;
+  font-size: 1.5rem;
+}

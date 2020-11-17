@@ -10,3 +10,8 @@ nav {
   font-size: 2rem;
   font-family: "Bungee";
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

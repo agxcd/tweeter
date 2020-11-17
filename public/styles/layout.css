@@ -30,28 +30,9 @@ body {
 .container {
   height: 100vh;
   width: 90vw;
-  padding: 1.5em;
-}
-/* Tweet Compost */
-input {
-  width: 90vw;
-  background-color: #f4f1ec;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  font-weight: bold;
+  margin: auto;
 }
 
-.tweet-info {
-  font-family: "Bungee";
-  padding: 0.5rem;
-}
-
-.t-btn {
-  background-color: #4056a1;
-  height: 1.5em;
-  color: #ffffff;
-}
 /* Posted Tweet */
 .posted-area {
   border-style: solid;
