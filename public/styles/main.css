@@ -1,0 +1,32 @@
+/* Nav Head */
+nav {
+  background-color: #d89820;
+}
+.nav-body {
+  padding: 30px 20px;
+}
+.nav-head {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.title {
+  font-size: 2rem;
+}
+
+.nav-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.userName {
+  margin-top: 20px;
+  color: white;
+}
+
+.title {
+  font-family: "Bungee";
+}
