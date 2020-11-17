@@ -26,3 +26,17 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+nav {
+  background-color: #4056a1;
+  color: #ffffff;
+  height: 120px;
+  width: 100vw;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 2rem;
+  font-family: "Bungee";
+}
