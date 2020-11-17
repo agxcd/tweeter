@@ -1,14 +1,16 @@
 /* Nav Head */
 nav {
-  background-color: #d89820;
+  background-color: #4056a1;
+  color: #ffffff;
+  height: 120px;
+  width: 100vw;
 }
 .nav-body {
-  padding: 30px 20px;
+  padding: 1.5em;
 }
 .nav-head {
   display: flex;
   justify-content: space-between;
-  color: white;
 }
 .title {
   font-size: 2rem;
