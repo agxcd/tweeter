@@ -38,11 +38,11 @@ body {
   border-style: solid;
   width: 90vw;
   padding: 1.5rem;
+  margin-top: 50px;
 }
 
 hr {
   border: 2px solid;
-  width: 85vw;
 }
 
 /*  */
@@ -62,3 +62,5 @@ hr {
 .fluid {
   margin: 50px;
 }
+
+/* All the Tweets  */

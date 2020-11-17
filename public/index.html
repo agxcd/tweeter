@@ -40,7 +40,7 @@
       >
     </nav>
 
-    <header class="flex-ver">
+    <header class="flex-ver header">
       <div>
         <img src="images/profile-hex.png" alt="avatar" />
       </div>
@@ -65,55 +65,61 @@
         </form>
       </section>
 
-      <div class="posted-area">
-        <div class="flex-hor">
-          <div class="flex-row">
-            <img
-              src="https://image.shutterstock.com/image-vector/avater-glyph-flat-vector-icon-260nw-1471589480.jpg"
-              width="50"
-              alt=""
-            />
-            <div class="user-name">Elmer Lazzeri</div>
-          </div>
-          <div class="user-id">@Lazzeri</div>
-        </div>
-        <h3 class="posted-tweet">Wow! What a tweeterific app!</h3>
-        <hr class="flex-hor" />
-        <div class="flex-hor tweet-action">
-          <p class="posted-date">10 days ago</p>
-          <div class="flex-hor tweet-icon">
-            <img src="https://img.icons8.com/color/48/000000/flag.png" />
-            <img src="https://img.icons8.com/color/48/000000/retweet.png" />
-            <img src="https://img.icons8.com/ultraviolet/40/000000/like.png" />
-          </div>
-        </div>
-      </div>
-      <div class="fluid"></div>
-      <div class="posted-area">
-        <div class="flex-hor">
-          <div class="flex-row">
-            <img
-              src="https://image.shutterstock.com/image-vector/avater-glyph-flat-vector-icon-260nw-1471589480.jpg"
-              width="50"
-              alt=""
-            />
-            <div class="user-name">Elizabeth Piras</div>
-          </div>
-          <div class="user-id">@MissPiras</div>
-        </div>
-        <h3 class="posted-tweet">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </h3>
-        <hr class="flex-hor" />
-        <div class="flex-hor tweet-action">
-          <p class="posted-date">10 days ago</p>
-          <div class="flex-hor tweet-icon">
-            <img src="https://img.icons8.com/color/48/000000/flag.png" />
-            <img src="https://img.icons8.com/color/48/000000/retweet.png" />
-            <img src="https://img.icons8.com/ultraviolet/40/000000/like.png" />
-          </div>
-        </div>
-      </div>
+      <section id="all-tweets">
+        <article class="posted-area">
+          <header class="flex-hor">
+            <div class="flex-row">
+              <img
+                src="https://image.shutterstock.com/image-vector/avater-glyph-flat-vector-icon-260nw-1471589480.jpg"
+                width="50"
+                alt=""
+              />
+              <div class="user-name">Elmer Lazzeri</div>
+            </div>
+            <div class="user-id">@Lazzeri</div>
+          </header>
+          <h3 class="posted-tweet">Wow! What a tweeterific app!</h3>
+          <hr class="flex-hor" />
+          <footer class="flex-hor footer">
+            <p class="posted-date">10 days ago</p>
+            <div class="flex-hor tweet-icon">
+              <img src="https://img.icons8.com/color/48/000000/flag.png" />
+              <img src="https://img.icons8.com/color/48/000000/retweet.png" />
+              <img
+                src="https://img.icons8.com/ultraviolet/40/000000/like.png"
+              />
+            </div>
+          </footer>
+        </article>
+        <div class="fluid"></div>
+        <article class="posted-area">
+          <header class="flex-hor">
+            <div class="flex-row">
+              <img
+                src="https://image.shutterstock.com/image-vector/avater-glyph-flat-vector-icon-260nw-1471589480.jpg"
+                width="50"
+                alt=""
+              />
+              <div class="user-name">Elizabeth Piras</div>
+            </div>
+            <div class="user-id">@MissPiras</div>
+          </header>
+          <h3 class="posted-tweet">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </h3>
+          <hr class="flex-hor" />
+          <footer class="flex-hor">
+            <p class="posted-date">10 days ago</p>
+            <div class="flex-hor tweet-icon">
+              <img src="https://img.icons8.com/color/48/000000/flag.png" />
+              <img src="https://img.icons8.com/color/48/000000/retweet.png" />
+              <img
+                src="https://img.icons8.com/ultraviolet/40/000000/like.png"
+              />
+            </div>
+          </footer>
+        </article>
+      </section>
     </main>
   </body>
   <script src="./scripts/composer-char-counter.js"></script>
