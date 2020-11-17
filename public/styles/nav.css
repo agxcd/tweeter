@@ -4,6 +4,8 @@ nav {
   height: 120px;
   width: 100vw;
   padding: 1.5em;
+  position: sticky;
+  top: 0;
 }
 
 .title {
