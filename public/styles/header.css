@@ -4,6 +4,9 @@ header {
   color: #ffffff;
   height: 400px;
   width: 100vw;
+}
+
+.flex-ver {
   display: flex;
   flex-direction: column;
   justify-content: center;

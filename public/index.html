@@ -1,54 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- External font -->
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">    
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="styles/header.css" type="text/css" />
+  <!-- External font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="styles/header.css" type="text/css" />
 
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+</head>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span class="title">Tweeter</span>
-      <span><strong>Write</strong> a new tweet</span>
-    </nav>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav class="flex-hor">
+    <span class="title">Tweeter</span>
+    <span><strong>Write</strong> a new tweet</span>
+  </nav>
 
-    <header>
-      <div>
-          <img src="images/profile-hex.png" alt="avatar"> 
-      </div>
-      <br>
-      <div>
-          <h2> <strong class="fir-name">First</strong> Name</h2>
-      </div>
+  <header class="flex-ver">
+    <div>
+      <img src="images/profile-hex.png" alt="avatar">
+    </div>
+    <br>
+    <div>
+      <h2> <strong class="fir-name">First</strong> Name</h2>
+    </div>
   </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <div class="create-tweet">
+      <form action="post">
+        <input type="text" name="tweet" placeholder="What are you humming about?">
+        <div class="tweet-info flex-hor">
+          <button class="t-btn">TWEET</button>
+          <div>140</div>
 
-      <!-- <p>
-        I'm a block level element.
-      </p>
-      <span>
-        I'm an inline element.
-      </span> -->
-    </main>
-  </body>
+        </div>
+      </form>
+    </div>
+    <div class="posted-area">
+      <div class="flex-hor">
+        <div class="flex-row">
+          <img src="https://image.shutterstock.com/image-vector/avater-glyph-flat-vector-icon-260nw-1471589480.jpg" width="50" alt="">
+          <div class="user-name">
+            Elmer Lazzeri
+          </div>
+        </div>
+        <div class="user-id">
+          @Lazzeri
+        </div>
+
+      </div>
+      <h3 class="posted-tweet">
+        Wow! What a tweeterific app!
+      </h3>
+      <hr class="flex-hor">
+      <div class="flex-hor tweet-action">
+        <p class="posted-date">10 days ago</p>
+        <div class="flex-hor tweet-icon">
+          <img src="https://img.icons8.com/color/48/000000/flag.png" />
+          <img src="https://img.icons8.com/color/48/000000/retweet.png" />
+          <img src="https://img.icons8.com/ultraviolet/40/000000/like.png" />
+        </div>
+      </div>
+    </div>
+    <div class="fluid">
+      
+    </div>
+    <div class="posted-area">
+      <div class="flex-hor">
+        <div class="flex-row">
+          <img src="https://image.shutterstock.com/image-vector/avater-glyph-flat-vector-icon-260nw-1471589480.jpg" width="50" alt="">
+          <div class="user-name">
+            Elizabeth Piras
+          </div>
+        </div>
+        <div class="user-id">
+          @MissPiras
+        </div>
+      </div>
+      <h3 class="posted-tweet">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </h3>
+      <hr class="flex-hor">
+      <div class="flex-hor tweet-action">
+        <p class="posted-date">10 days ago</p>
+        <div class="flex-hor tweet-icon">
+          <img src="https://img.icons8.com/color/48/000000/flag.png" />
+          <img src="https://img.icons8.com/color/48/000000/retweet.png" />
+          <img src="https://img.icons8.com/ultraviolet/40/000000/like.png" />
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>
