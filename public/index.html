@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="styles/header.css" type="text/css" />
     <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="styles/tweets-main.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -64,7 +65,7 @@
           </div>
         </form>
       </section>
-
+      <!-- All the Tweets Posted -->
       <section id="all-tweets">
         <article class="posted-area">
           <header class="flex-hor">
@@ -76,7 +77,7 @@
               />
               <div class="user-name">Elmer Lazzeri</div>
             </div>
-            <div class="user-id">@Lazzeri</div>
+            <div class="user-id hidden">@Lazzeri</div>
           </header>
           <h3 class="posted-tweet">Wow! What a tweeterific app!</h3>
           <hr class="flex-hor" />
@@ -91,6 +92,7 @@
             </div>
           </footer>
         </article>
+        <!-- Contain Fluid -->
         <div class="fluid"></div>
         <article class="posted-area">
           <header class="flex-hor">
@@ -102,7 +104,7 @@
               />
               <div class="user-name">Elizabeth Piras</div>
             </div>
-            <div class="user-id">@MissPiras</div>
+            <div class="user-id hidden">@MissPiras</div>
           </header>
           <h3 class="posted-tweet">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -122,5 +124,7 @@
       </section>
     </main>
   </body>
+  <!-- Scripts -->
   <script src="./scripts/composer-char-counter.js"></script>
+  <script src="./scripts/hover.js"></script>
 </html>

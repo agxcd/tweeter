@@ -1,0 +1,31 @@
+/* Posted Tweet */
+.posted-area {
+  border-style: solid;
+  width: 90vw;
+  padding: 1.5rem;
+  margin-top: 50px;
+}
+
+hr {
+  border: 2px solid;
+}
+
+/* All the Tweets  */
+
+/* Hover effect */
+article:hover {
+  padding: 10px;
+  box-shadow: 5px 10px #c5cbe3;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.user-id {
+  color: #c5cbe3;
+}
+
+.user-name {
+  margin-left: 10px;
+}
