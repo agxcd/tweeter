@@ -33,7 +33,7 @@ body {
   margin: auto;
 }
 
-/*  */
+/* Flex layout */
 .flex-hor {
   display: flex;
   align-items: center;
@@ -43,6 +43,13 @@ body {
 .flex-row {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.flex-ver {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 

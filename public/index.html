@@ -18,6 +18,9 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
 
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/48ffad08a8.js"></script>
+
     <!-- App CSS -->
     <link rel="stylesheet" href="styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="styles/nav.css" type="text/css" />
@@ -30,6 +33,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   </head>
 
   <body>
@@ -66,65 +70,13 @@
         </form>
       </section>
       <!-- All the Tweets Posted -->
-      <section id="all-tweets">
-        <article class="posted-area">
-          <header class="flex-hor">
-            <div class="flex-row">
-              <img
-                src="https://image.shutterstock.com/image-vector/avater-glyph-flat-vector-icon-260nw-1471589480.jpg"
-                width="50"
-                alt=""
-              />
-              <div class="user-name">Elmer Lazzeri</div>
-            </div>
-            <div class="user-id hidden">@Lazzeri</div>
-          </header>
-          <h3 class="posted-tweet">Wow! What a tweeterific app!</h3>
-          <hr class="flex-hor" />
-          <footer class="flex-hor footer">
-            <p class="posted-date">10 days ago</p>
-            <div class="flex-hor tweet-icon">
-              <img src="https://img.icons8.com/color/48/000000/flag.png" />
-              <img src="https://img.icons8.com/color/48/000000/retweet.png" />
-              <img
-                src="https://img.icons8.com/ultraviolet/40/000000/like.png"
-              />
-            </div>
-          </footer>
-        </article>
-        <!-- Contain Fluid -->
-        <div class="fluid"></div>
-        <article class="posted-area">
-          <header class="flex-hor">
-            <div class="flex-row">
-              <img
-                src="https://image.shutterstock.com/image-vector/avater-glyph-flat-vector-icon-260nw-1471589480.jpg"
-                width="50"
-                alt=""
-              />
-              <div class="user-name">Elizabeth Piras</div>
-            </div>
-            <div class="user-id hidden">@MissPiras</div>
-          </header>
-          <h3 class="posted-tweet">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </h3>
-          <hr class="flex-hor" />
-          <footer class="flex-hor">
-            <p class="posted-date">10 days ago</p>
-            <div class="flex-hor tweet-icon">
-              <img src="https://img.icons8.com/color/48/000000/flag.png" />
-              <img src="https://img.icons8.com/color/48/000000/retweet.png" />
-              <img
-                src="https://img.icons8.com/ultraviolet/40/000000/like.png"
-              />
-            </div>
-          </footer>
+      <section>
+        <article id="#tweets-container" class="tweets-container">
+          <!-- Tweets in Client JS -->
         </article>
       </section>
     </main>
   </body>
   <!-- Scripts -->
   <script src="./scripts/composer-char-counter.js"></script>
-  <script src="./scripts/hover.js"></script>
 </html>

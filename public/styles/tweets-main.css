@@ -13,7 +13,7 @@ hr {
 /* All the Tweets  */
 
 /* Hover effect */
-article:hover {
+.posted-area:hover {
   box-shadow: 5px 10px #c5cbe3;
 }
 .hidden {
@@ -21,14 +21,19 @@ article:hover {
   display: none;
 }
 
-article:hover .hidden {
+.posted-area:hover .hidden {
   display: block;
 }
 
+/* article component */
 .user-id {
   color: #c5cbe3;
 }
 
 .user-name {
   margin-left: 10px;
+}
+
+i {
+  margin-right: 10px;
 }

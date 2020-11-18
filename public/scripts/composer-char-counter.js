@@ -1,6 +1,6 @@
-$(document).ready(function () {
-  console.log("Hello");
-});
+// $(document).ready(function () {
+//   console.log("Hello");
+// });
 
 $("#tweet-text").on("keyup", function () {
   let remaining = 140 - $(this).val().length;
