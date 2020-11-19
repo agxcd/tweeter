@@ -1,10 +1,13 @@
 $(document).ready(function () {
+  // Mapping the tweets
   const renderTweets = function (tweets) {
+    $(".tweets-container").empty();
     return tweets.map((tweet) =>
       $(".tweets-container").append(createTweetElement(tweet))
     );
   };
 
+  // Tweet elements
   const createTweetElement = function (tweet) {
     let $tweet = `
               <div class="posted-area">
@@ -30,16 +33,32 @@ $(document).ready(function () {
     return $tweet;
   };
 
+  // Form Submitting action / POST
   $("form").submit(function (event) {
+    event.preventDefault();
     if (!$("#tweet-text").val()) {
       alert("You cannot tweet empty tweet.");
     }
     if ($("#tweet-text").val().length > 140) {
       alert("Sorry your tweet exceeds the 140 character limit");
+    } else {
+      $.ajax({
+        url: $("form").attr("action"),
+        type: "POST",
+        data: $("form").serialize(),
+        success: function () {
+          loadTweets();
+          $("#tweet-text").val("");
+          $("#counter").text("140");
+        },
+        error: function () {
+          console.log("An error occur.");
+        },
+      }).then((res) => console.log(res));
     }
-    event.preventDefault();
   });
 
+  //Fetch data from /tweets
   const loadTweets = function () {
     $.ajax({
       url: "/tweets",
