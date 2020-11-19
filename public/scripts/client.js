@@ -9,27 +9,63 @@ $(document).ready(function () {
 
   // Tweet elements
   const createTweetElement = function (tweet) {
-    let $tweet = `
-              <div class="posted-area">
-            <header class="flex-hor">
-              <div class="flex-row">
-                <img src=${tweet.user.avatars} width="50" alt="" />
-                <div class="user-name">${tweet.user.name}</div>
-              </div>
-              <div class="user-id hidden">${tweet.user.handle}</div>
-            </header>
-            <h3 class="posted-tweet">${tweet.content.text}</h3>
-            <hr class="flex-hor" />
-            <footer class="flex-hor footer">
-              <p class="posted-date">${tweet.created_at}</p>
-              <div class="flex-hor tweet-icon">
-                <i class="fa fa-flag" aria-hidden="true"></i>
-                <i class="fa fa-retweet" aria-hidden="true"></i>
-                <i class="fa fa-heart" aria-hidden="true"></i>
-              </div>
-            </footer>
-          </div>
-    `;
+    // let $tweet = `
+    //           <div class="posted-area">
+    //         <header class="flex-hor">
+    //           <div class="flex-row">
+    //             <img src=${tweet.user.avatars} width="50" alt="" />
+    //             <div class="user-name">${tweet.user.name}</div>
+    //           </div>
+    //           <div class="user-id hidden">${tweet.user.handle}</div>
+    //         </header>
+    //         <h3 class="posted-tweet">${tweet.content.text}</h3>
+    //         <hr class="flex-hor" />
+    //         <footer class="flex-hor">
+    //           <p class="posted-date">${tweet.created_at}</p>
+    //           <div class="flex-hor tweet-icon">
+    //             <i class="fa fa-flag"></i>
+    //             <i class="fa fa-retweet"></i>
+    //             <i class="fa fa-heart"></i>
+    //           </div>
+    //         </footer>
+    //       </div>
+    // `;
+
+    //Define elements
+    let $tweet = $("<div>").addClass("posted-area");
+    let $header = $("<header>").addClass("flex-hor");
+    let $flexRow = $("<div>").addClass("flex-row");
+    let $avatar = $("<img>").addClass("avatar").attr("src", tweet.user.avatars);
+    let $name = $("<div>").addClass("user-name").text(tweet.user.name);
+    let $userID = $("<div>").addClass("user-id hidden").text(tweet.user.handle);
+    let $postTweet = $("<h3>")
+      .addClass("posted-tweet")
+      .text(tweet.content.text);
+    let $hr = $("<hr>").addClass("flex-hor");
+    let $footer = $("<footer>").addClass("flex-hor");
+    let $daysAgo = $("<span>").addClass("posted-date").text(tweet.created_at);
+    let $iconDiv = $("<div>").addClass("flex-hor tweet-icon");
+    let $flagIcon = $("<i>").addClass("fa fa-flag");
+    let $heartIcon = $("<i>").addClass("fa fa-heart");
+    let $retweetIcon = $("<i>").addClass("fa fa-retweet");
+
+    //Append elements into the HTML
+    $tweet.append($header);
+    $header.append($flexRow);
+    $flexRow.append($avatar);
+    $flexRow.append($name);
+    $header.append($userID);
+    $tweet.append($postTweet);
+    $tweet.append($hr);
+    $tweet.append($footer);
+    $footer.append($daysAgo);
+    $footer.append($iconDiv);
+    $iconDiv.append($flagIcon);
+    $iconDiv.append($heartIcon);
+    $iconDiv.append($retweetIcon);
+
+    console.log($tweet);
+
     return $tweet;
   };
 
