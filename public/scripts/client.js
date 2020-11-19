@@ -9,41 +9,6 @@ $(document).ready(function () {
 
   // Tweet elements
   const createTweetElement = function (tweet) {
-    // Using .text function Define elements
-    // let $tweet = $("<div>").addClass("posted-area");
-    // let $header = $("<header>").addClass("flex-hor");
-    // let $flexRow = $("<div>").addClass("flex-row");
-    // let $avatar = $("<img>").addClass("avatar").attr("src", tweet.user.avatars);
-    // let $name = $("<span>").addClass("user-name").text(tweet.user.name);
-    // let $userID = $("<span>")
-    //   .addClass("user-id hidden")
-    //   .text(tweet.user.handle);
-    // let $postTweet = $("<h3>")
-    //   .addClass("posted-tweet")
-    //   .text(tweet.content.text);
-    // let $hr = $("<hr>").addClass("flex-hor");
-    // let $footer = $("<footer>").addClass("flex-hor");
-    // let $daysAgo = $("<span>").addClass("posted-date").text(tweet.created_at);
-    // let $iconDiv = $("<div>").addClass("flex-hor tweet-icon");
-    // let $flagIcon = $("<i>").addClass("fa fa-flag");
-    // let $heartIcon = $("<i>").addClass("fa fa-heart");
-    // let $retweetIcon = $("<i>").addClass("fa fa-retweet");
-
-    // //Append elements into the HTML
-    // $tweet.append($header);
-    // $header.append($flexRow);
-    // $flexRow.append($avatar);
-    // $flexRow.append($name);
-    // $header.append($userID);
-    // $tweet.append($postTweet);
-    // $tweet.append($hr);
-    // $tweet.append($footer);
-    // $footer.append($daysAgo);
-    // $footer.append($iconDiv);
-    // $iconDiv.append($flagIcon);
-    // $iconDiv.append($heartIcon);
-    // $iconDiv.append($retweetIcon);
-
     //Using Escape function
     const escape = function (str) {
       const div = document.createElement("div");
@@ -52,7 +17,7 @@ $(document).ready(function () {
     };
 
     //Helper function to calculate the day since created
-    function ago(date) {
+    const ago = function (date) {
       const minutes = Math.ceil((Date.now() - date) / 60000);
       const hours = Math.ceil((Date.now() - date) / 60000 / 60);
       const days = Math.ceil((Date.now() - date) / 60000 / 60 / 24);
@@ -71,7 +36,7 @@ $(document).ready(function () {
         return `${months} months ago`;
       }
       return `${years} years ago`;
-    }
+    };
 
     let $tweet = `
               <div class="posted-area">
@@ -111,6 +76,8 @@ $(document).ready(function () {
   const $errorBox = $(".errorBox");
   const $errorMsg = $(".errorMsg");
 
+  //
+
   // Form Submitting Action / POST
   $("form").submit(function (event) {
     event.preventDefault();
@@ -126,9 +93,9 @@ $(document).ready(function () {
     } else {
       $errorBox.slideUp("fast");
       $.ajax({
-        url: $("form").attr("action"),
+        url: "/tweets",
         type: "POST",
-        data: $("form").serialize(),
+        data: $(this).serialize(),
         complete: function () {
           loadTweets();
           $("#tweet-text").val("");
@@ -153,4 +120,33 @@ $(document).ready(function () {
     });
   };
   loadTweets();
+
+  //Score button to the top
+  const $btnTop = $("#toTop");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  const scrollFunction = function () {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      $btnTop.addClass("visible");
+    } else {
+      $btnTop.addClass("hidden").removeClass("visible");
+    }
+  };
+
+  // When the user clicks on the button, scroll to the top of the document
+  const topFunction = function () {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
+  $btnTop.click(function () {
+    topFunction();
+  });
 });

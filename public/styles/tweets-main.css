@@ -46,6 +46,7 @@ i {
   margin-top: 30px;
   margin-bottom: 30px;
   align-items: center;
+  text-align: center;
 }
 
 .visible {
@@ -54,11 +55,25 @@ i {
 
 .errorBox p {
   display: flex;
-  justify-content: center;
 }
 
 /* Bottom Button */
-footer button {
-  /* display: none; */
-  position: sticky;
+#toTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+footer button i {
+  margin: auto;
+  padding-left: 8px;
+  padding-right: 8px;
 }
