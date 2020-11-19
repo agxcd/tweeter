@@ -9,28 +9,6 @@ $(document).ready(function () {
 
   // Tweet elements
   const createTweetElement = function (tweet) {
-    // let $tweet = `
-    //           <div class="posted-area">
-    //         <header class="flex-hor">
-    //           <div class="flex-row">
-    //             <img src=${tweet.user.avatars} width="50" alt="" />
-    //             <div class="user-name">${tweet.user.name}</div>
-    //           </div>
-    //           <div class="user-id hidden">${tweet.user.handle}</div>
-    //         </header>
-    //         <h3 class="posted-tweet">${tweet.content.text}</h3>
-    //         <hr class="flex-hor" />
-    //         <footer class="flex-hor">
-    //           <p class="posted-date">${tweet.created_at}</p>
-    //           <div class="flex-hor tweet-icon">
-    //             <i class="fa fa-flag"></i>
-    //             <i class="fa fa-retweet"></i>
-    //             <i class="fa fa-heart"></i>
-    //           </div>
-    //         </footer>
-    //       </div>
-    // `;
-
     //Define elements
     let $tweet = $("<div>").addClass("posted-area");
     let $header = $("<header>").addClass("flex-hor");
