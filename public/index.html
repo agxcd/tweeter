@@ -34,6 +34,7 @@
     <!-- App JS -->
     <script defer type="text/javascript" src="/scripts/client.js"></script>
     <script defer src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
     <!-- Scripts -->
     <script defer src="./scripts/composer-char-counter.js"></script>
   </head>
@@ -57,10 +58,18 @@
         <h2><strong class="fir-name">First</strong> Name</h2>
       </div>
     </header>
+
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section id="new-tweet" class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <!-- <h2>Compose Tweet</h2> -->
+        <div class="errorBox hidden">
+          <i class="fa fa-exclamation-triangle"></i>
+          <span class="errorMsg">This is error MSG</span>
+          <i class="fa fa-exclamation-triangle"></i>
+        </div>
+
+        <!-- New Tweet Form -->
         <form action="/tweets" id="tweetPost" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>

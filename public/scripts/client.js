@@ -14,8 +14,10 @@ $(document).ready(function () {
     let $header = $("<header>").addClass("flex-hor");
     let $flexRow = $("<div>").addClass("flex-row");
     let $avatar = $("<img>").addClass("avatar").attr("src", tweet.user.avatars);
-    let $name = $("<div>").addClass("user-name").text(tweet.user.name);
-    let $userID = $("<div>").addClass("user-id hidden").text(tweet.user.handle);
+    let $name = $("<span>").addClass("user-name").text(tweet.user.name);
+    let $userID = $("<span>")
+      .addClass("user-id hidden")
+      .text(tweet.user.handle);
     let $postTweet = $("<h3>")
       .addClass("posted-tweet")
       .text(tweet.content.text);
@@ -47,15 +49,24 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  // Form Submitting action / POST
+  // Error Message Box
+  const $errorBox = $(".errorBox");
+  const $errorMsg = $(".errorMsg");
+
+  // Form Submitting Action / POST
   $("form").submit(function (event) {
     event.preventDefault();
     if (!$("#tweet-text").val()) {
-      alert("You cannot tweet empty tweet.");
+      $errorBox.show();
+      $errorMsg.text("You cannot tweet empty tweet.");
+      return;
     }
     if ($("#tweet-text").val().length > 140) {
-      alert("Sorry your tweet exceeds the 140 character limit");
+      $errorBox.show();
+      $errorMsg.text("Sorry your tweet exceeds the 140 character limit");
+      return;
     } else {
+      $errorBox.slideUp();
       $.ajax({
         url: $("form").attr("action"),
         type: "POST",
@@ -63,12 +74,12 @@ $(document).ready(function () {
         success: function () {
           loadTweets();
           $("#tweet-text").val("");
-          $("#counter").text("140");
+          $("#counter").text("140").removeClass("warning");
         },
         error: function () {
           console.log("An error occur.");
         },
-      }).then((res) => console.log(res));
+      });
     }
   });
 
@@ -84,7 +95,7 @@ $(document).ready(function () {
       error: function () {
         console.log("An error occur.");
       },
-    }).then((res) => console.log(res));
+    });
   };
   loadTweets();
 });

@@ -16,8 +16,8 @@ hr {
 .posted-area:hover {
   box-shadow: 5px 10px #c5cbe3;
 }
+
 .hidden {
-  /* visibility: hidden; */
   display: none;
 }
 
@@ -36,4 +36,23 @@ hr {
 
 i {
   margin-right: 10px;
+}
+/* Error Box effect */
+.errorBox {
+  border-style: solid;
+  border-color: red;
+  color: red;
+  width: 90vw;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.visible {
+  display: block;
+}
+
+.errorBox p {
+  display: flex;
+  justify-content: center;
 }
