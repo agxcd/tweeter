@@ -1,9 +1,9 @@
 $(document).ready(function () {
   // Mapping the tweets
   const renderTweets = function (tweets) {
-    $(".tweets-container").empty();
+    $("#tweets-container").empty();
     return tweets.map((tweet) =>
-      $(".tweets-container").append(createTweetElement(tweet))
+      $("#tweets-container").append(createTweetElement(tweet))
     );
   };
 
@@ -148,5 +148,6 @@ $(document).ready(function () {
 
   $btnTop.click(function () {
     topFunction();
+    $("form").show("fast");
   });
 });
