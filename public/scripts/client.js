@@ -31,8 +31,12 @@ $(document).ready(function () {
   };
 
   $("form").submit(function (event) {
-    console.log($(this).serialize());
-    // alert($(this).serialize());
+    if (!$("#tweet-text").val()) {
+      alert("You cannot tweet empty tweet.");
+    }
+    if ($("#tweet-text").val().length > 140) {
+      alert("Sorry your tweet exceeds the 140 character limit");
+    }
     event.preventDefault();
   });
 
