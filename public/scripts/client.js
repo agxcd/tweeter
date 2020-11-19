@@ -56,11 +56,26 @@ $(document).ready(function () {
     `;
     return $tweet;
   };
-  renderTweets(data);
-});
+  // renderTweets(data);
 
-$("form").submit(function (event) {
-  console.log($(this).serialize());
-  alert($(this).serialize());
-  event.preventDefault();
+  $("form").submit(function (event) {
+    console.log($(this).serialize());
+    // alert($(this).serialize());
+    event.preventDefault();
+  });
+
+  const loadTweets = function () {
+    $.ajax({
+      url: "/tweets",
+      type: "GET",
+      data: $("form").serialize(),
+      success: function (data) {
+        renderTweets(data);
+      },
+      error: function () {
+        console.log("An error occur.");
+      },
+    }).then((res) => console.log(res));
+  };
+  loadTweets();
 });

@@ -34,6 +34,8 @@
     <!-- App JS -->
     <script defer type="text/javascript" src="/scripts/client.js"></script>
     <script defer src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Scripts -->
+    <script defer src="./scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -58,7 +60,7 @@
     <main class="container">
       <section id="new-tweet" class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form action="/tweets" id="tweetPost" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="tweet-info flex-hor">
@@ -77,6 +79,4 @@
       </section>
     </main>
   </body>
-  <!-- Scripts -->
-  <script src="./scripts/composer-char-counter.js"></script>
 </html>
