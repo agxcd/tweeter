@@ -9,45 +9,81 @@ $(document).ready(function () {
 
   // Tweet elements
   const createTweetElement = function (tweet) {
-    //Define elements
-    let $tweet = $("<div>").addClass("posted-area");
-    let $header = $("<header>").addClass("flex-hor");
-    let $flexRow = $("<div>").addClass("flex-row");
-    let $avatar = $("<img>").addClass("avatar").attr("src", tweet.user.avatars);
-    let $name = $("<span>").addClass("user-name").text(tweet.user.name);
-    let $userID = $("<span>")
-      .addClass("user-id hidden")
-      .text(tweet.user.handle);
-    let $postTweet = $("<h3>")
-      .addClass("posted-tweet")
-      .text(tweet.content.text);
-    let $hr = $("<hr>").addClass("flex-hor");
-    let $footer = $("<footer>").addClass("flex-hor");
-    let $daysAgo = $("<span>").addClass("posted-date").text(tweet.created_at);
-    let $iconDiv = $("<div>").addClass("flex-hor tweet-icon");
-    let $flagIcon = $("<i>").addClass("fa fa-flag");
-    let $heartIcon = $("<i>").addClass("fa fa-heart");
-    let $retweetIcon = $("<i>").addClass("fa fa-retweet");
+    // Using .text function Define elements
+    // let $tweet = $("<div>").addClass("posted-area");
+    // let $header = $("<header>").addClass("flex-hor");
+    // let $flexRow = $("<div>").addClass("flex-row");
+    // let $avatar = $("<img>").addClass("avatar").attr("src", tweet.user.avatars);
+    // let $name = $("<span>").addClass("user-name").text(tweet.user.name);
+    // let $userID = $("<span>")
+    //   .addClass("user-id hidden")
+    //   .text(tweet.user.handle);
+    // let $postTweet = $("<h3>")
+    //   .addClass("posted-tweet")
+    //   .text(tweet.content.text);
+    // let $hr = $("<hr>").addClass("flex-hor");
+    // let $footer = $("<footer>").addClass("flex-hor");
+    // let $daysAgo = $("<span>").addClass("posted-date").text(tweet.created_at);
+    // let $iconDiv = $("<div>").addClass("flex-hor tweet-icon");
+    // let $flagIcon = $("<i>").addClass("fa fa-flag");
+    // let $heartIcon = $("<i>").addClass("fa fa-heart");
+    // let $retweetIcon = $("<i>").addClass("fa fa-retweet");
 
-    //Append elements into the HTML
-    $tweet.append($header);
-    $header.append($flexRow);
-    $flexRow.append($avatar);
-    $flexRow.append($name);
-    $header.append($userID);
-    $tweet.append($postTweet);
-    $tweet.append($hr);
-    $tweet.append($footer);
-    $footer.append($daysAgo);
-    $footer.append($iconDiv);
-    $iconDiv.append($flagIcon);
-    $iconDiv.append($heartIcon);
-    $iconDiv.append($retweetIcon);
+    // //Append elements into the HTML
+    // $tweet.append($header);
+    // $header.append($flexRow);
+    // $flexRow.append($avatar);
+    // $flexRow.append($name);
+    // $header.append($userID);
+    // $tweet.append($postTweet);
+    // $tweet.append($hr);
+    // $tweet.append($footer);
+    // $footer.append($daysAgo);
+    // $footer.append($iconDiv);
+    // $iconDiv.append($flagIcon);
+    // $iconDiv.append($heartIcon);
+    // $iconDiv.append($retweetIcon);
 
-    console.log($tweet);
+    //Using Escape function
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+
+    let $tweet = `
+              <div class="posted-area">
+            <header class="flex-hor">
+              <div class="flex-row">
+                <img src=${tweet.user.avatars} width="50" alt="" />
+                <div class="user-name">${tweet.user.name}</div>
+              </div>
+              <div class="user-id hidden">${tweet.user.handle}</div>
+            </header>
+            <h3 class="posted-tweet">${escape(tweet.content.text)}</h3>
+            <hr class="flex-hor" />
+            <footer class="flex-hor footer">
+              <p class="posted-date">${tweet.created_at}</p>
+              <div class="flex-hor tweet-icon">
+                <i class="fa fa-flag" aria-hidden="true"></i>
+                <i class="fa fa-retweet" aria-hidden="true"></i>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </div>
+            </footer>
+          </div>
+    `;
 
     return $tweet;
   };
+
+  //New Tweet Compose Display
+  $(".tweetBtn").click(function () {
+    if ($("form").first().is(":hidden")) {
+      $("form").show("slow");
+    } else {
+      $("form").slideUp();
+    }
+  });
 
   // Error Message Box
   const $errorBox = $(".errorBox");
@@ -66,7 +102,7 @@ $(document).ready(function () {
       $errorMsg.text("Sorry your tweet exceeds the 140 character limit");
       return;
     } else {
-      $errorBox.slideUp();
+      $errorBox.slideUp("fast");
       $.ajax({
         url: $("form").attr("action"),
         type: "POST",

@@ -56,3 +56,9 @@ i {
   display: flex;
   justify-content: center;
 }
+
+/* Bottom Button */
+footer button {
+  /* display: none; */
+  position: sticky;
+}

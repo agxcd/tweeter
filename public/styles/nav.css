@@ -17,3 +17,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+nav i {
+  margin-top: 10px;
+}
