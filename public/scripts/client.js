@@ -46,10 +46,32 @@ $(document).ready(function () {
 
     //Using Escape function
     const escape = function (str) {
-      let div = document.createElement("div");
+      const div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
+
+    //Helper function to calculate the day since created
+    function ago(date) {
+      const minutes = Math.ceil((Date.now() - date) / 60000);
+      const hours = Math.ceil((Date.now() - date) / 60000 / 60);
+      const days = Math.ceil((Date.now() - date) / 60000 / 60 / 24);
+      const months = Math.ceil((Date.now() - date) / 60000 / 60 / 24 / 30);
+      const years = Math.ceil((Date.now() - date) / 60000 / 60 / 24 / 365);
+      if (minutes < 60) {
+        return `${minutes} minutes ago`;
+      }
+      if (hours < 24) {
+        return `${hours} hours ago`;
+      }
+      if (days < 31) {
+        return `${days} days ago`;
+      }
+      if (months < 12) {
+        return `${months} months ago`;
+      }
+      return `${years} years ago`;
+    }
 
     let $tweet = `
               <div class="posted-area">
@@ -63,7 +85,7 @@ $(document).ready(function () {
             <h3 class="posted-tweet">${escape(tweet.content.text)}</h3>
             <hr class="flex-hor" />
             <footer class="flex-hor footer">
-              <p class="posted-date">${tweet.created_at}</p>
+              <p class="posted-date">${ago(tweet.created_at)}</p>
               <div class="flex-hor tweet-icon">
                 <i class="fa fa-flag" aria-hidden="true"></i>
                 <i class="fa fa-retweet" aria-hidden="true"></i>
@@ -107,13 +129,10 @@ $(document).ready(function () {
         url: $("form").attr("action"),
         type: "POST",
         data: $("form").serialize(),
-        success: function () {
+        complete: function () {
           loadTweets();
           $("#tweet-text").val("");
           $("#counter").text("140").removeClass("warning");
-        },
-        error: function () {
-          console.log("An error occur.");
         },
       });
     }
