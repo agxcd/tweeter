@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="styles/header.css" type="text/css" />
     <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="styles/tweets-main.css" type="text/css" />
+    <link rel="stylesheet" href="styles/media.css" type="text/css" />
+    <link rel="stylesheet" href="styles/error-box.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -50,46 +52,43 @@
         ></a>
       </div>
     </nav>
+    <section class="main-content">
+      <header class="flex-ver header">
+        <div>
+          <img src="images/profile-hex.png" alt="avatar" />
+        </div>
+        <br />
+        <div>
+          <h2><strong class="fir-name">First</strong> Name</h2>
+        </div>
+      </header>
 
-    <header class="flex-ver header">
-      <div>
-        <img src="images/profile-hex.png" alt="avatar" />
-      </div>
-      <br />
-      <div>
-        <h2><strong class="fir-name">First</strong> Name</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section id="new-tweet" class="new-tweet">
+      <!-- Page-specific (main) content here -->
+      <main id="new-tweet" class="container">
         <!-- <h2>Compose Tweet</h2> -->
-        <div class="errorBox hidden">
+        <div class="error-box hidden">
           <i class="fa fa-exclamation-triangle"></i>
-          <span class="errorMsg">This is error MSG</span>
+          <span class="error-msg">This is error MSG</span>
           <i class="fa fa-exclamation-triangle"></i>
         </div>
 
         <!-- New Tweet Form -->
-        <form action="/tweets" id="tweetPost" class="hidden" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+        <form action="/tweets" class="hidden" method="POST">
+          <label for="new-text">What are you humming about?</label>
+          <textarea name="text" id="new-text"></textarea>
           <div class="tweet-info flex-hor">
-            <button type="submit" class="t-btn">Tweet</button>
-            <output name="counter" id="counter" for="tweet-text">140</output>
+            <button type="submit">Tweet</button>
+            <output name="counter" id="counter" for="new-text">140</output>
           </div>
         </form>
-      </section>
-      <!-- All the Tweets Posted -->
-      <section>
-        <article id="tweets-container">
+        <!-- All the Tweets Posted -->
+        <section id="tweets-container">
           <!-- Tweets in Client JS -->
-        </article>
-      </section>
-    </main>
+        </section>
+      </main>
+    </section>
   </body>
-  <footer>
+  <footer class="page-footer">
     <button id="toTop" class="hidden">
       <i class="fa fa-angle-double-up fa-2x"></i>
     </button>

@@ -1,5 +1,5 @@
 textarea {
-  width: 90vw;
+  width: 100%;
   background-color: #f4f1ec;
   border-top-style: hidden;
   border-right-style: hidden;
@@ -10,7 +10,7 @@ textarea {
 }
 
 form {
-  margin-top: 30px;
+  margin-bottom: 4rem;
 }
 
 label {
@@ -19,15 +19,16 @@ label {
 
 .tweet-info {
   font-family: "Bungee";
+  margin-top: 0.8rem;
 }
 
-.t-btn {
+form button {
   background-color: #4056a1;
-  height: 1.5em;
+  height: 2rem;
   color: #ffffff;
 }
 
-#tweet-text {
+#new-text {
   color: #545149;
   font-size: 1.5rem;
 }

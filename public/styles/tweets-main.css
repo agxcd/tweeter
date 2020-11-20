@@ -1,63 +1,49 @@
-/* Posted Tweet */
-.posted-area {
+/* Tweets Posted */
+.tweet-box {
   border-style: solid;
-  width: 90vw;
-  padding: 1.5rem;
-  margin-top: 50px;
+  padding: 1.2rem;
+  margin-bottom: 50px;
 }
 
 hr {
   border: 2px solid;
 }
 
-/* All the Tweets  */
-
-/* Hover effect */
-.posted-area:hover {
+/* Hover Effect (In the demo of the project handle hover effect was required)*/
+/* Icon Hover Effect (Project description icons required hover effect on Icons) */
+.tweet-box:hover {
   box-shadow: 5px 10px #c5cbe3;
 }
 
-.hidden {
-  display: none;
-}
-
-.posted-area:hover .hidden {
+.tweet-box:hover .hidden {
   display: block;
 }
 
-/* article component */
-.user-id {
+/* Article Component */
+.handle {
   color: #c5cbe3;
 }
 
-.user-name {
+.name {
   margin-left: 10px;
 }
 
+.marginL {
+  margin-left: 0.8rem;
+}
+
+h3 {
+  margin-left: 0.8rem;
+}
 i {
   margin-right: 10px;
 }
-/* Error Box effect */
-.errorBox {
-  border-style: solid;
-  border-color: red;
-  color: red;
-  width: 90vw;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  align-items: center;
-  text-align: center;
-}
-
-.visible {
-  display: block;
-}
-
-.errorBox p {
-  display: flex;
-}
 
 /* Bottom Button */
+.page-footer {
+  padding: 2rem;
+}
+
 #toTop {
   position: fixed;
   bottom: 20px;
@@ -72,7 +58,7 @@ i {
   border-radius: 50%;
 }
 
-footer button i {
+#toTop i {
   margin: auto;
   padding-left: 8px;
   padding-right: 8px;

@@ -2,6 +2,15 @@
   background-color: #d89820;
   background-image: url("../images/asfalt-light.png");
   color: #ffffff;
-  height: 400px;
-  width: 100vw;
+  height: 30rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.header img {
+  margin-top: 3rem;
+}
+
+.header h2 {
+  margin-bottom: 2.5rem;
 }

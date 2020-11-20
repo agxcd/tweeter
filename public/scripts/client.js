@@ -39,25 +39,25 @@ $(document).ready(function () {
     };
 
     let $tweet = `
-              <div class="posted-area">
+              <article class="tweet-box">
             <header class="flex-hor">
-              <div class="flex-row">
+              <div class="flex-row marginL">
                 <img src=${tweet.user.avatars} width="50" alt="" />
-                <div class="user-name">${tweet.user.name}</div>
+                <span class="name">${tweet.user.name}</span>
               </div>
-              <div class="user-id hidden">${tweet.user.handle}</div>
+              <span class="handle hidden">${tweet.user.handle}</span>
             </header>
-            <h3 class="posted-tweet">${escape(tweet.content.text)}</h3>
+            <h3>${escape(tweet.content.text)}</h3>
             <hr class="flex-hor" />
-            <footer class="flex-hor footer">
-              <p class="posted-date">${ago(tweet.created_at)}</p>
-              <div class="flex-hor tweet-icon">
+            <footer class="flex-hor marginL">
+              <p >${ago(tweet.created_at)}</p>
+              <div class="flex-hor hidden">
                 <i class="fa fa-flag" aria-hidden="true"></i>
                 <i class="fa fa-retweet" aria-hidden="true"></i>
                 <i class="fa fa-heart" aria-hidden="true"></i>
               </div>
             </footer>
-          </div>
+          </article>
     `;
 
     return $tweet;
@@ -73,20 +73,20 @@ $(document).ready(function () {
   });
 
   // Error Message Box
-  const $errorBox = $(".errorBox");
-  const $errorMsg = $(".errorMsg");
+  const $errorBox = $(".error-box");
+  const $errorMsg = $(".error-msg");
 
   //
 
   // Form Submitting Action / POST
   $("form").submit(function (event) {
     event.preventDefault();
-    if (!$("#tweet-text").val()) {
+    if (!$("#new-text").val()) {
       $errorBox.show();
       $errorMsg.text("You cannot tweet empty tweet.");
       return;
     }
-    if ($("#tweet-text").val().length > 140) {
+    if ($("#new-text").val().length > 140) {
       $errorBox.show();
       $errorMsg.text("Sorry your tweet exceeds the 140 character limit");
       return;
@@ -98,7 +98,7 @@ $(document).ready(function () {
         data: $(this).serialize(),
         complete: function () {
           loadTweets();
-          $("#tweet-text").val("");
+          $("#new-text").val("");
           $("#counter").text("140").removeClass("warning");
         },
       });

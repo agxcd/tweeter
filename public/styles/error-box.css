@@ -1,0 +1,14 @@
+/* Error Box effect */
+.error-box {
+  border-style: solid;
+  border-color: red;
+  color: red;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.error-box p {
+  display: flex;
+}

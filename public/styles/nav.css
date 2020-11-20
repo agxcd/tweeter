@@ -3,7 +3,7 @@ nav {
   color: #ffffff;
   height: 120px;
   width: 100vw;
-  padding: 1.5em;
+  padding: 2rem;
   position: sticky;
   top: 0;
 }
@@ -18,7 +18,31 @@ a {
   text-decoration: none;
 }
 
-nav i {
-  margin-top: 10px;
+.tweetBtn i {
+  margin-top: 0.2rem;
   color: red;
+  animation: bounce 0.75s infinite;
+}
+
+/* Animated Compose Button */
+.tweetBtn:hover {
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+
+  30% {
+    transform: scale(1, 0.8) translate(0px, 4px);
+  }
+
+  75% {
+    transform: scale(1, 1.1) translate(0px, -4px);
+  }
+
+  100% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
 }
