@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // Mapping the tweets
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     $("#tweets-container").empty();
     return tweets.map((tweet) =>
       $("#tweets-container").append(createTweetElement(tweet))
@@ -8,16 +8,16 @@ $(document).ready(function () {
   };
 
   // Tweet elements
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     //Using Escape function
-    const escape = function (str) {
+    const escape = function(str) {
       const div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
 
     //Helper function to calculate the day since created
-    const ago = function (date) {
+    const ago = function(date) {
       const minutes = Math.ceil((Date.now() - date) / 60000);
       const hours = Math.ceil((Date.now() - date) / 60000 / 60);
       const days = Math.ceil((Date.now() - date) / 60000 / 60 / 24);
@@ -64,7 +64,7 @@ $(document).ready(function () {
   };
 
   //New Tweet Compose Display
-  $(".tweetBtn").click(function () {
+  $(".tweetBtn").click(function() {
     if ($("form").first().is(":hidden")) {
       $("form").show("slow");
     } else {
@@ -79,7 +79,7 @@ $(document).ready(function () {
   //
 
   // Form Submitting Action / POST
-  $("form").submit(function (event) {
+  $("form").submit(function(event) {
     event.preventDefault();
     if (!$("#new-text").val()) {
       $errorBox.show();
@@ -96,7 +96,7 @@ $(document).ready(function () {
         url: "/tweets",
         type: "POST",
         data: $(this).serialize(),
-        complete: function () {
+        complete: function() {
           loadTweets();
           $("#new-text").val("");
           $("#counter").text("140").removeClass("warning");
@@ -106,15 +106,15 @@ $(document).ready(function () {
   });
 
   //Fetch data from /tweets
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax({
       url: "/tweets",
       type: "GET",
       data: $("form").serialize(),
-      success: function (data) {
+      success: function(data) {
         renderTweets(data);
       },
-      error: function () {
+      error: function() {
         console.log("An error occur.");
       },
     });
@@ -124,12 +124,12 @@ $(document).ready(function () {
   //Score button to the top
   const $btnTop = $("#toTop");
 
-  window.onscroll = function () {
+  window.onscroll = function() {
     scrollFunction();
   };
 
   // When the user scrolls down 20px from the top of the document, show the button
-  const scrollFunction = function () {
+  const scrollFunction = function() {
     if (
       document.body.scrollTop > 20 ||
       document.documentElement.scrollTop > 20
@@ -141,12 +141,12 @@ $(document).ready(function () {
   };
 
   // When the user clicks on the button, scroll to the top of the document
-  const topFunction = function () {
+  const topFunction = function() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   };
 
-  $btnTop.click(function () {
+  $btnTop.click(function() {
     topFunction();
     $("form").show("fast");
   });

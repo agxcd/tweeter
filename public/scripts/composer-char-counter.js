@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  $("#tweet-text").on("keyup", function () {
+$(document).ready(function() {
+  $("#tweet-text").on("keyup", function() {
     let remaining = 140 - $(this).val().length;
     const counter = $("#counter");
     counter.text(remaining);
