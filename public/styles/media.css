@@ -1,5 +1,4 @@
 /* Another tablet breakpoint is maximum width of 768px */
-
 @media only screen and (max-width: 768px) {
   .main-content {
     display: flex;
@@ -10,20 +9,24 @@
     width: 90vw;
     margin-top: 4rem;
   }
+
   nav {
     background-color: #d89820;
   }
 }
+
 /* Tablet: minimum width of 768px to maximum width of 1024px */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .main-content {
     display: flex;
     flex-direction: column;
   }
+
   .container {
     width: 90vw;
     margin-top: 4rem;
   }
+
   nav {
     background-color: #d89820;
   }
@@ -38,12 +41,13 @@
     justify-content: center;
     height: 90vh;
   }
-  /*  .header .container  */
 
+  /*  .header .container  */
   .header {
     margin: 3rem;
     width: 40%;
   }
+
   .container {
     margin: 3rem;
     width: 60%;
