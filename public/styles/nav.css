@@ -20,7 +20,7 @@ a {
 
 .tweetBtn i {
   margin-top: 0.2rem;
-  color: red;
+  color: #fff;
   animation: bounce 0.75s infinite;
 }
 

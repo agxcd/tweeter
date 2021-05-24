@@ -1,10 +1,11 @@
 .header {
-  background-color: #caf7e3;
+  background-color: #e4efe7;
   background-image: url("../images/asfalt-light.png");
   color: #ffffff;
   height: 30rem;
   text-align: center;
   padding: 1rem;
+  border-radius: 12px;
 }
 
 .header img {
@@ -13,4 +14,13 @@
 
 .header h2 {
   margin-bottom: 2.5rem;
+}
+
+.avatar {
+  width: 100px;
+}
+
+/* Hover Effect*/
+.header:hover {
+  box-shadow: 8px 10px #c5cbe3;
 }

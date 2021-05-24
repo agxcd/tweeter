@@ -1,90 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
 
-<head>
-  <!-- Meta Information -->
-  <title>Tweeter - Home Page</title>
+    <!-- External CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <!-- External font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-  <!-- External font -->
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/48ffad08a8.js"></script>
 
-  <!-- Font Awesome -->
-  <script src="https://use.fontawesome.com/48ffad08a8.js"></script>
+    <!-- App CSS -->
+    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="styles/tweets-main.css" type="text/css" />
+    <link rel="stylesheet" href="styles/media.css" type="text/css" />
+    <link rel="stylesheet" href="styles/error-box.css" type="text/css" />
 
-  <!-- App CSS -->
-  <link rel="stylesheet" href="styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="styles/nav.css" type="text/css" />
-  <link rel="stylesheet" href="styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
-  <link rel="stylesheet" href="styles/tweets-main.css" type="text/css" />
-  <link rel="stylesheet" href="styles/media.css" type="text/css" />
-  <link rel="stylesheet" href="styles/error-box.css" type="text/css" />
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <!-- External JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- App JS -->
+    <script defer type="text/javascript" src="/scripts/client.js"></script>
+    <script defer src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-  <!-- App JS -->
-  <script defer type="text/javascript" src="/scripts/client.js"></script>
-  <script defer src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Scripts -->
+    <script defer src="./scripts/composer-char-counter.js"></script>
+  </head>
 
-  <!-- Scripts -->
-  <script defer src="./scripts/composer-char-counter.js"></script>
-</head>
-
-<body>
-  <!-- Top nav bar (fixed) -->
-  <nav class="flex-hor" id="top">
-    <span class="title">Tweeter</span>
-    <div class="flex-ver">
-      <span><strong>Write</strong> a new tweet</span>
-      <a href="#" class="tweetBtn">
-        <i class="fa fa-angle-double-down"></i></a>
-    </div>
-  </nav>
-  <section class="main-content">
-    <header class="flex-ver header">
-      <div>
-        <img src="images/profile-hex.png" alt="avatar" />
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav class="flex-hor" id="top">
+      <span class="title">Tweeter</span>
+      <div class="flex-ver">
+        <span><strong>Write</strong> a new tweet</span>
+        <a href="#" class="tweetBtn">
+          <i class="fa fa-angle-double-down">Click me</i></a
+        >
       </div>
-      <br />
-      <div>
-        <h2><strong class="fir-name">First</strong> Name</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main id="new-tweet" class="container">
-      <!-- <h2>Compose Tweet</h2> -->
-      <div class="error-box hidden">
-        <i class="fa fa-exclamation-triangle"></i>
-        <span class="error-msg">This is error MSG</span>
-        <i class="fa fa-exclamation-triangle"></i>
-      </div>
-
-      <!-- New Tweet Form -->
-      <form action="/tweets" class="hidden" method="POST">
-        <label for="new-text">What are you humming about?</label>
-        <textarea name="text" id="new-text"></textarea>
-        <div class="tweet-info flex-hor">
-          <button type="submit">Tweet</button>
-          <output name="counter" id="counter" for="new-text">140</output>
+    </nav>
+    <section class="main-content">
+      <header class="flex-ver header">
+        <div>
+          <img class="avatar" src="images/poker-face.png" alt="avatar" />
         </div>
-      </form>
-      <!-- All the Tweets Posted -->
-      <section id="tweets-container">
-        <!-- Tweets in Client JS -->
-      </section>
-    </main>
-  </section>
-</body>
-<footer class="page-footer">
-  <button id="toTop" class="hidden">
-    <i class="fa fa-angle-double-up fa-2x"></i>
-  </button>
-</footer>
+        <br />
+        <div>
+          <h2><strong class="fir-name">Jane</strong> Doe</h2>
+        </div>
+      </header>
 
+      <!-- Page-specific (main) content here -->
+      <main id="new-tweet" class="container">
+        <!-- <h2>Compose Tweet</h2> -->
+        <div class="error-box hidden">
+          <i class="fa fa-exclamation-triangle"></i>
+          <span class="error-msg">This is error MSG</span>
+          <i class="fa fa-exclamation-triangle"></i>
+        </div>
+
+        <!-- New Tweet Form -->
+        <form action="/tweets" class="hidden" method="POST">
+          <label for="new-text">What are you humming about?</label>
+          <textarea name="text" id="new-text"></textarea>
+          <div class="tweet-info flex-hor">
+            <button type="submit">Tweet</button>
+            <output name="counter" id="counter" for="new-text">140</output>
+          </div>
+        </form>
+        <!-- All the Tweets Posted -->
+        <section id="tweets-container">
+          <!-- Tweets in Client JS -->
+        </section>
+      </main>
+    </section>
+  </body>
+  <footer class="page-footer">
+    <button id="toTop" class="hidden">
+      <i class="fa fa-angle-double-up fa-2x"></i>
+    </button>
+  </footer>
 </html>
